@@ -6,12 +6,41 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="app.js"></script>
 </head>
-<body>
-<div class="board">
+  <body>
+<div class="board"></div>
 
+<div id="musicOverlay" onclick="playMusic()">
+    Tap to turn on music 🎵
 </div>
-    <audio autoplay loop controls>
-  <source src="el_roxit0-watery-graves-181198.mp3" type="audio/mpeg">
-    </audio>
-</body>
+
+<audio id="music" loop>
+    <source src="el_roxit0-watery-graves-181198.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+function playMusic() {
+    const music = document.getElementById("music");
+    music.play();
+    document.getElementById("musicOverlay").style.display = "none";
+}
+</script>
+
+<style>
+#musicOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: black;
+    color: white;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+}
+</style>
+  </body>  
 </html>
